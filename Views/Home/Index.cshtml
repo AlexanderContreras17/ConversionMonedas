@@ -9,20 +9,19 @@
 		<h1>Conversion de moneda</h1>
     <form action="~/Home/Index" method="post">
         <div>
-            <label for="Cantidad">Cantidad:</label>
+            <label>Cantidad:</label>
             <input type="number" value="@Model.pesos" name="pesos" />
         </div>
 
         <div>
-            <label for="Conversion">Convirtiendo a:@Model.Moneda</label>
-            <select name="Conversion">
-                <option value="mx" name="moneda" >mx</option>
-                <option value="us" name="moneda" >us</option>
+            <label >Convirtiendo a:</label>
+            <select name="Moneda">
+                <option value="mx"  @(Model.Moneda =="mx")>mx</option>
+                <option value="us"  @(Model.Moneda =="us")>us</option>
             </select>
         </div>
         <input type="submit" value="Convertir" />
-        <label type="number" for="Resultado">Total es:@Model.conversion.ToString("$0.00")</label>
-
+        <label>Total es:@Model.conversion.ToString("$0.00")</label>
     </form>
 
   </body>
