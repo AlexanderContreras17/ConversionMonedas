@@ -1,0 +1,30 @@
+﻿@model ConversionMoneda.Models.ViewModels.IndexViewModel
+
+<html>
+	<head>
+		<title>Conversion</title>
+	</head>
+  <body>
+
+		<h1>Conversion de moneda</h1>
+    <form action="~/Home/Index">
+        <div>
+            <label for="Cantidad">Cantidad:</label>
+            <input type="number" value="@Model.pesos" name="Cantidad" />
+        </div>
+
+        <div>
+            <label for="Conversion">Convirtiendo a:@Model.Moneda</label>
+            <select name="Conversion">
+                <option value="MXM">MXM</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <input type="submit" value="Convertir" />
+        <label type="number" for="Resultado">Total es:@Model.conversion</label>
+
+    </form>
+
+  </body>
+</html>
+
